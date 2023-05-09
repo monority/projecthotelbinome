@@ -1,0 +1,22 @@
+@use "variables" as v;
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62,5%;
+}
+
+body{
+    font-family:v.$fontGlobal;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+    background-color: v.$backgroundMainColor;
+    color: v.$mainColor;
+    background-color: white;
+}
+a{
+    color:v.$mainColor;
+}

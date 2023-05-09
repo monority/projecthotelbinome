@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Plaza</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/63d06bf0f5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="elements">
+                <nav>
+                    <img src="img/Logoblanc.png" alt="">
+                    <ul>
+                        <li><a href="#sectionForm">Nouveau Client</li></a>
+                        <li><a href="#sectionLeave">Départ client</li></a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- 1ère section "Accueil nouveau client"-->
+        <div class="block" id="sectionWelcome">
+            <div class="containers">
+                <div class="wrapperImg">
+                    <div class="title">
+                        <h1>Accueil nouveau client</h1>
+                        <hr>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="wrapper">
+                        <label for="firstName">Prenom</label>
+                        <input type="text" placeholder="Jean" class="formInput" name="formulaireinput" id="prenom">
+                    </div>
+                    <div class="wrapper">
+                        <label for="lastName">Nom</label>
+                        <input type="text" placeholder="Dupont" class="formInput" id="nom">
+                    </div>
+                    <div class="wrapper">
+                        <label for="nightNumber">Nombres de nuits</label>
+                        <input type="number" placeholder="2" class="formInput" id="nuits" min="1" max="4">
+                    </div>
+                    <div class="wrapper">
+                        <label for="room">Chambre</label>
+                        <select name="typechambre" id="typechambre" class="formInput">
+                            <option value="ch1">Chambre 1 personne</option>
+                            <option value="ch2">Chambre 2 personne</option>
+                            <option value="ch3">Chambre 4 personne</option>
+                            <option value="loft" selected>Loft</option>
+                        </select>
+                    </div>
+                    <div class="wrapper">
+                        <label for="lunch">Petit déjeuner</label><br>
+                        <input type="radio" name="petit_dej" value="Oui" id="yesRadio">
+                        <label for="yesRadio">Oui</label>
+                        <input type="radio" name="petit_dej" value="Non" id="noRadio" checked>
+                        <label for="noRadio">Non</label>
+                    </div>
+                    <div class="wrapper">
+                        <button class="formInput submitButton" type="button" id="formButton"
+                            onclick="getValue()">Enregistrer le client <i class="fa-solid fa-calendar"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2ème section "Rechercher un client" -->
+        <div class="block" id="sectionSearch">
+            <div class="containers">
+                <div class="wrapperImg">
+                    <div class="title">
+                        <h1>Départ client</h1>
+                        <hr>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="wrapper">
+                        <label for="firstnameSearch">Prénom</label>
+                        <input type="text" placeholder="Jean" class="formInput" id="prenomSearch">
+                    </div>
+                    <div class="wrapper">
+                        <label for="nameSearch">Nom</label>
+                        <input type="text" placeholder="Dujardin" class="formInput" id="nomSearch">
+                    </div>
+                    <div class="wrapper">
+                        <button type="button" class="formInput submitButton" onclick="search()" ;>Rechercher le client
+                            <i class="fa-solid fa-user"></i></button>
+                    </div>
+                </div>
+                <div class="wrapper display-none" id="sectionFacture">
+                    <div id="billHide"></div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+<!-- sass --watch sass/main.scss css/main.css -->
