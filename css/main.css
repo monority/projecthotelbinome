@@ -111,9 +111,9 @@ header nav li a {
   display: flex;
 }
 
-@media screen and (min-width: 997px) {
+@media screen and (min-width: 1199px) {
   .container {
-    max-width: 100rem;
+    max-width: 95rem;
   }
   #sectionWelcome .container, #sectionSearch .container {
     display: flex;
@@ -121,8 +121,10 @@ header nav li a {
     align-items: center;
     justify-content: center;
   }
-  #sectionWelcome .wrapper {
-    flex-basis: 20%;
+}
+@media screen and (min-width: 575px) and (max-width: 1199px) {
+  .container {
+    max-width: 49rem;
   }
 }
 
