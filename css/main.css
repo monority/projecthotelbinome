@@ -115,7 +115,7 @@ header nav li a {
   .container {
     max-width: 95rem;
   }
-  #sectionWelcome .container, #sectionSearch .container {
+  #sectionWelcome .wrappers, #sectionSearch .container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -124,7 +124,19 @@ header nav li a {
 }
 @media screen and (min-width: 575px) and (max-width: 1199px) {
   .container {
-    max-width: 49rem;
+    max-width: 55rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #sectionWelcome .wrappers, #sectionSearch .wrappers {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper {
+    width: 300px;
   }
 }
 
