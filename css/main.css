@@ -138,6 +138,10 @@ header nav li a {
     align-items: center;
     justify-content: center;
   }
+  #sectionWelcome .wrappers .wrapper,
+  #sectionSearch .wrappers .wrapper {
+    flex-basis: 49%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

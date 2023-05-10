@@ -129,5 +129,8 @@ header {
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        .wrapper{
+            flex-basis: 49%;
+        }
     }
 }
