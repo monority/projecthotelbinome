@@ -1,4 +1,9 @@
 let i = 0;
+var data = JSON.parse(localStorage.getItem("yourData")) ||  {
+    thisFigure: 0,
+    thatFigure: 0,
+    theOtherFigure: 0
+ };
 
 // création du texte à afficher
 let newP = document.createElement('p');

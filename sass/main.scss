@@ -44,10 +44,11 @@ header {
     color: white;
     font-weight: bold;
 }
-
-#sectionWelcome .containers, #sectionSearch .containers{
+.block{
     background-color: v.$backgroundMainColor;
-    .wrapperImg{
+}
+
+.wrapperImg{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -65,7 +66,7 @@ header {
             border: solid 2px orange;
         }
     }
-}}
+}
 
 #sectionWelcome .wrapperImg{
     background-image: url(../img/Lille-Seminaires.jpg);
@@ -121,9 +122,7 @@ header {
         align-items: center;
         justify-content: center;
     }
-    .wrapper{
-        width: 300px;
-    }   
+
 
     
 }
