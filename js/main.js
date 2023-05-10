@@ -66,7 +66,7 @@ function search() {
             trouve = true;
 
             // calcul du prix
-            if (enregistrement[searchindex].dejeuner === "oui") {
+            if (enregistrement[searchindex].dejeuner === "Oui") {
                 prixdej = (7 * enregistrement[searchindex].nuits);
             } else prixdej = 0;
 
