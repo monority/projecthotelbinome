@@ -1,10 +1,34 @@
 let i = 0;
+console.log(localStorage);
+let enregAdd = "";
+
+
+
+
+function deleteContent(){
+
+    let dlt = confirm("Voulez vous supprimer l'entièreté du stockage permanent ?")
+
+    if (dlt){
+
+        localStorage.clear()
+
+    }
+
+}
+
+// deleteContent()
+
+
+
+
 
 // création du texte à afficher
 let newP = document.createElement('p');
 let placediv = document.getElementById("billHide");
 let sectionHide = document.getElementById("sectionFacture");
 
+let EnregistrementString = "";
 
 let enregistrement = [{
     prenom: "",
@@ -19,6 +43,13 @@ function displayRadioValue() {
     var x = document.querySelector('input[name="petit_dej"]:checked')  ;
     return x.value;
 }
+
+function showArray(){
+
+    let ok = JSON.parse(localStorage.getItem('Enregistrements'));
+    console.table(ok)
+    
+    }
 
 function getValue() {
     // Sélectionner l'élément input et récupérer sa valeur
@@ -37,12 +68,28 @@ function getValue() {
         chambre: chambre,
         dejeuner: dej
     };
-    i++;
 
     // optionnel : affichage
     console.table(enregistrement);
     alert("Vous êtes dorénavant enregistré");
-}
+
+
+
+    // str = str.replace(/(\.|:|)/g, '_')
+
+
+    // partie localstorage
+    for (j = 0; j < enregistrement.length; j++) {
+        enregAdd = JSON.stringify(enregistrement[i]);
+
+        localStorage.setItem(`Enregistrement${localStorage.length}`, enregAdd.replace(/("|\.)/g, ''));
+        }
+
+    console.log(localStorage);
+    // ----
+
+    i++;
+};
 
 function addSection() {
     sectionHide.classList.remove("display-none");
@@ -91,3 +138,7 @@ function search() {
         }
     }
 }
+
+
+
+
