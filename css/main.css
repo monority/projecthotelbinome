@@ -61,10 +61,11 @@ header nav li a {
   font-weight: bold;
 }
 
-#sectionWelcome .containers, #sectionSearch .containers {
+.block {
   background-color: #1b1b1b;
 }
-#sectionWelcome .containers .wrapperImg, #sectionSearch .containers .wrapperImg {
+
+.wrapperImg {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -75,11 +76,12 @@ header nav li a {
   width: 100%;
   height: 40vh;
 }
-#sectionWelcome .containers .wrapperImg .title, #sectionSearch .containers .wrapperImg .title {
+.wrapperImg .title {
   background-color: rgba(209, 209, 209, 0.65);
   font-size: calc(1rem + 0.3vw);
+  color: black;
 }
-#sectionWelcome .containers .wrapperImg .title hr, #sectionSearch .containers .wrapperImg .title hr {
+.wrapperImg .title hr {
   width: 100px;
   border: solid 2px orange;
 }
@@ -98,7 +100,6 @@ header nav li a {
   background: #c2a182;
   height: 150px;
 }
-
 #sectionFacture p {
   margin: 0;
 }
@@ -111,18 +112,35 @@ header nav li a {
   display: flex;
 }
 
-@media screen and (min-width: 997px) {
+@media screen and (min-width: 1199px) {
   .container {
-    max-width: 100rem;
+    max-width: 95rem;
   }
-  #sectionWelcome .container, #sectionSearch .container {
+  #sectionWelcome .wrappers,
+  #sectionSearch .container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
   }
-  #sectionWelcome .wrapper {
-    flex-basis: 20%;
+}
+@media screen and (min-width: 575px) and (max-width: 1199px) {
+  .container {
+    max-width: 55rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #sectionWelcome .wrappers,
+  #sectionSearch .wrappers {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  #sectionWelcome .wrappers .wrapper,
+  #sectionSearch .wrappers .wrapper {
+    flex-basis: 49%;
   }
 }
 

@@ -40,7 +40,7 @@ let enregistrement = [{
 }];
 
 function displayRadioValue() {
-    var x = document.querySelector('input[name="petit_dej"]:checked')  ;
+    var x = document.querySelector('input[name="petit_dej"]:checked');
     return x.value;
 }
 
@@ -59,8 +59,8 @@ function getValue() {
     let chambre = document.getElementById("typechambre").value;
     let dej = displayRadioValue();
 
+    // optionnel : affichage
 
-    // Stocker dans tableau enregistrement
     enregistrement[i] = {
         prenom: prenom,
         nom: nom,
@@ -69,9 +69,7 @@ function getValue() {
         dejeuner: dej
     };
 
-    // optionnel : affichage
-    console.table(enregistrement);
-    alert("Vous êtes dorénavant enregistré");
+
 
 
 
@@ -91,15 +89,21 @@ function getValue() {
     i++;
 };
 
+
+
 function addSection() {
     sectionHide.classList.remove("display-none");
     sectionHide.classList.add("display-flex");
 }
-function removeSection(){
+function removeSection() {
     sectionHide.classList.add("display-none");
     sectionHide.classList.remove("display-flex");
 }
 
+function showArray() {
+    let ok = JSON.parse(localStorage.getItem('array'));
+    console.table(ok)
+}
 
 function search() {
     let prenom2 = document.getElementById("prenomSearch").value;
@@ -113,7 +117,7 @@ function search() {
             trouve = true;
 
             // calcul du prix
-            if (enregistrement[searchindex].dejeuner === "oui") {
+            if (enregistrement[searchindex].dejeuner === "Oui") {
                 prixdej = (7 * enregistrement[searchindex].nuits);
             } else prixdej = 0;
 
@@ -129,7 +133,7 @@ function search() {
             setTimeout(removeSection, 3500);
             newP.textContent = (`La facture de ${enregistrement[searchindex].prenom} ${enregistrement[searchindex].nom} est de ${enregistrement[searchindex].prix}€`);
         }
-        
+
         else {
             addSection()
             setTimeout(removeSection, 3500);
