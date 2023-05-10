@@ -7,48 +7,51 @@
 
 header {
     background-color: v.$backgroundHeaderColor;
-    nav{
-            display: flex;        
-            justify-content: space-between;
-            align-items: center;
-
-            img{
-                max-width: 150px;
-            }
-            li{
-                display: inline-block;
-                font-size: v.$fontSizedefault;
-                a{
-                    text-decoration: none;
-                    color: v.$mainColor;
-                }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        img {
+            max-width: 150px;
+        }
+        li {
+            display: inline-block;
+            font-size: v.$fontSizedefault;
+            a {
+                text-decoration: none;
+                color: v.$mainColor;
             }
         }
+    }
 }
 
 // Variable global //
-.container{
+.container {
     margin: auto;
     max-width: 25rem;
     color: white;
 }
-.wrapper{
+
+.wrapper {
     padding: 1.5rem 1rem;
 }
+
 .formInput {
     width: 100%;
     height: 40px;
 }
-.submitButton{
+
+.submitButton {
     background: v.$buttonColor;
     color: white;
     font-weight: bold;
 }
-.block{
+
+.block {
     background-color: v.$backgroundMainColor;
 }
 
-.wrapperImg{
+.wrapperImg {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -58,21 +61,22 @@ header {
     text-align: center;
     width: 100%;
     height: 40vh;
-    .title{
+    .title {
         background-color: v.$colorGreyfaded;
         font-size: v.$fontSizeTitle;
-        hr{
+        color: black;
+        hr {
             width: 100px;
             border: solid 2px orange;
         }
     }
 }
 
-#sectionWelcome .wrapperImg{
+#sectionWelcome .wrapperImg {
     background-image: url(../img/Lille-Seminaires.jpg);
 }
 
-#sectionSearch .wrapperImg{
+#sectionSearch .wrapperImg {
     background-image: url(../img/Lille-Hall.jpg);
 }
 
@@ -83,13 +87,13 @@ header {
     height: 150px;
     p {
         margin: 0;
-      }
+    }
 }
-  
+
 .display-none {
     display: none;
 }
-  
+
 .display-flex {
     display: flex;
 }
@@ -99,7 +103,9 @@ header {
     .container {
         max-width: 95rem;
     }
-    #sectionWelcome .wrappers, #sectionSearch .container{
+
+    #sectionWelcome .wrappers,
+    #sectionSearch .container {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -109,20 +115,19 @@ header {
 
 }
 
-@media screen and (min-width : 575px) and (max-width: 1199px){
+@media screen and (min-width : 575px) and (max-width: 1199px) {
     .container {
         max-width: 55rem;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    #sectionWelcome .wrappers, #sectionSearch .wrappers{
+
+    #sectionWelcome .wrappers,
+    #sectionSearch .wrappers {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
     }
-
-
-    
 }

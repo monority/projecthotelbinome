@@ -40,6 +40,7 @@
                 <div class="container">
                     <div class="wrappers">
                     <div class="wrapper">
+                        <form id="contactForm"  method="get">
                         <label for="firstName">Prenom</label>
                         <input type="text" placeholder="Jean" class="formInput" name="formulaireinput" id="prenom">
                     </div>
@@ -66,10 +67,13 @@
                         <label for="yesRadio">Oui</label>
                         <input type="radio" name="petit_dej" value="Non" id="noRadio" checked>
                         <label for="noRadio">Non</label>
+
                     </div>
                     <div class="wrapper">
                         <button class="formInput submitButton" type="button" id="formButton"
                             onclick="getValue()">Enregistrer le client <i class="fa-solid fa-calendar"></i></button>
+                    </form>
+
                     </div>
                 </div>
                 </div>
@@ -102,6 +106,7 @@
                 <div class="wrapper display-none" id="sectionFacture">
                     <div id="billHide"></div>
                 </div>
+                
 
             </div>
         </div>

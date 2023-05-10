@@ -79,6 +79,7 @@ header nav li a {
 .wrapperImg .title {
   background-color: rgba(209, 209, 209, 0.65);
   font-size: calc(1rem + 0.3vw);
+  color: black;
 }
 .wrapperImg .title hr {
   width: 100px;
@@ -115,7 +116,8 @@ header nav li a {
   .container {
     max-width: 95rem;
   }
-  #sectionWelcome .wrappers, #sectionSearch .container {
+  #sectionWelcome .wrappers,
+  #sectionSearch .container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -129,7 +131,8 @@ header nav li a {
     align-items: center;
     justify-content: center;
   }
-  #sectionWelcome .wrappers, #sectionSearch .wrappers {
+  #sectionWelcome .wrappers,
+  #sectionSearch .wrappers {
     display: flex;
     flex-wrap: wrap;
     align-items: center;

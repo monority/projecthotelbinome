@@ -1,15 +1,9 @@
 let i = 0;
-var data = JSON.parse(localStorage.getItem("yourData")) ||  {
-    thisFigure: 0,
-    thatFigure: 0,
-    theOtherFigure: 0
- };
 
 // création du texte à afficher
 let newP = document.createElement('p');
 let placediv = document.getElementById("billHide");
 let sectionHide = document.getElementById("sectionFacture");
-
 
 let enregistrement = [{
     prenom: "",
@@ -21,7 +15,7 @@ let enregistrement = [{
 }];
 
 function displayRadioValue() {
-    var x = document.querySelector('input[name="petit_dej"]:checked')  ;
+    var x = document.querySelector('input[name="petit_dej"]:checked');
     return x.value;
 }
 
@@ -33,31 +27,35 @@ function getValue() {
     let chambre = document.getElementById("typechambre").value;
     let dej = displayRadioValue();
 
+    // optionnel : affichage
 
-    // Stocker dans tableau enregistrement
     enregistrement[i] = {
         prenom: prenom,
         nom: nom,
         nuits: nuits,
         chambre: chambre,
         dejeuner: dej
-    };
-    i++;
 
-    // optionnel : affichage
+    }
+    i++
     console.table(enregistrement);
-    alert("Vous êtes dorénavant enregistré");
 }
+
+
 
 function addSection() {
     sectionHide.classList.remove("display-none");
     sectionHide.classList.add("display-flex");
 }
-function removeSection(){
+function removeSection() {
     sectionHide.classList.add("display-none");
     sectionHide.classList.remove("display-flex");
 }
 
+function showArray() {
+    let ok = JSON.parse(localStorage.getItem('array'));
+    console.table(ok)
+}
 
 function search() {
     let prenom2 = document.getElementById("prenomSearch").value;
@@ -87,12 +85,20 @@ function search() {
             setTimeout(removeSection, 3500);
             newP.textContent = (`La facture de ${enregistrement[searchindex].prenom} ${enregistrement[searchindex].nom} est de ${enregistrement[searchindex].prix}€`);
         }
-        
+
         else {
             addSection()
             setTimeout(removeSection, 3500);
             trouve = false;
             newP.textContent = (`Client introuvable`);
         }
+    }
+}
+
+window.onload = function () {
+    // Retrieve the data from local storage and populate the array
+    let storedData = localStorage.getItem('array');
+    if (storedData) {
+        enregistrement = JSON.parse(storedData);
     }
 }
